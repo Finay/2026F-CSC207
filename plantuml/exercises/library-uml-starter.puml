@@ -29,17 +29,23 @@ abstract class Item {
 
 ' TODO: add boxes for Book and DVD. What differs between them — a whole class,
 '       or just the value of a loan-period field?
+abstract class Book implements Item {
+  - title : String
+  - catalogueNumber : String
+  + getTitle() : String
+  + getCatalogueNumber() : String
+}
 
-' TODO: reference-only items cannot be borrowed at all. Decide how to say that
-'       in the diagram: a subclass, or an interface (e.g. "Borrowable") that
-'       only some items realize?
+abstract class DVD implements Item {
+}
 
-' TODO: add Member and Librarian. What do they have in common? Add the common
-'       supertype if you think one is warranted.
+interface Borrawble {
+}
 
-' TODO: add whatever represents a hold, and connect it to the classes that need
-'       to know about it.
+abstract class Member implements User {
+}
 
-' TODO: add the arrows between all of your types.
+abstract class Librarian implements User {
+}
 
 @enduml
